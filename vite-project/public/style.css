@@ -1,0 +1,12 @@
+/* .sizeFector{
+    
+} */
+
+@media(max-width:668px){
+    .sizeFector{
+        display: none;
+    }
+    .phnsize{
+        display: block!important;
+    }
+}

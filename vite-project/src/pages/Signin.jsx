@@ -138,7 +138,7 @@ function Button(props) {
 
     return (
         <>
-            <button className="bg-amber-50 cursor-pointer border border-b-black w-72 text-black p-2 mt-2 rounded" onClick={props.fun} type="submit">signup</button>
+            <button className="bg-amber-50 cursor-pointer border border-b-black w-72 text-black p-2 mt-2 rounded" onClick={props.fun} type="submit">signin</button>
         </>
     )
 }

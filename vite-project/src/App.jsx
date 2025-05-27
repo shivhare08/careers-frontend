@@ -10,6 +10,7 @@ import Contact from './pages/Contact'
 import Notification from './pages/Notification'
 import Jobs from './pages/Jobs'
 import Profile from './pages/Profile'
+import Model from './components/Model'
 
 function App() {
 
