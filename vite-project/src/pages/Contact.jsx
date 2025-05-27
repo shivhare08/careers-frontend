@@ -98,8 +98,8 @@ export default function Contact() {
                             setMobilmodel(x => !x);
                         }} style={{
                             display: "none"
-                        }} className="phnsize">
-                            <p><i className="fa-solid fa-bars"></i></p>
+                        }} className="phnsize cursor-pointer">
+                            <p>‖‖</p>
                         </div>
                     </div>
                     <br />

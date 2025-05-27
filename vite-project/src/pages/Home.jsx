@@ -73,15 +73,15 @@ function Home() {
                     <div className="flex mt-8 justify-between pl-10 pr-10">
                         <p style={{
                             display: "none"
-                        }} className="text-xl phnsize">Careers<span className="text-violet-900">.com</span></p>
+                        }} className="text-xl phnsize"> Careers<span className="text-violet-900">.com</span></p>
 
                         {/* icon */}
                         <div onClick={() => {
                             setMobilmodel(x => !x);
                         }} style={{
                             display: "none"
-                        }} className="phnsize">
-                            <p><i className="fa-solid fa-bars"></i></p>
+                        }} className="phnsize cursor-pointer">
+                            <p>‖‖</p>
                         </div>
                     </div>
 

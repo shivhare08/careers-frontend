@@ -37,10 +37,14 @@ export default function Model() {
                     <div className="pl-6 text-zinc-800">
                         <h1 className="text-xl mt-2 font-semibold">Account</h1>
                         <div className="text-zinc-700 font-semibold mt-2 ">
-                            <p className="mt-1.5">View Profile</p>
-                            <p className="mt-1.5">Edit Profile</p>
-                            <p className="mt-1.5">My Application</p>
-                            <p className="mt-1.5">Setting</p>
+                            <p onClick={()=>{
+                                navigate('/profile')
+                            }} className="mt-1.5 cursor-pointer">View Profile</p>
+                            <p className="mt-1.5 cursor-pointer">Edit Profile</p>
+                            <p onClick={()=>{
+                                navigate('/myapplication')
+                            }} className="mt-1.5 cursor-pointer">My Application</p>
+                            <p className="mt-1.5 cursor-pointer">Setting</p>
                             <p onClick={()=>{
                                 localStorage.removeItem("token")
                                 alert("logout successfully")
@@ -54,9 +58,11 @@ export default function Model() {
                     <div className="pl-6 text-zinc-800">
                         <h1 className="text-xl mt-2 font-semibold">Manage</h1>
                         <div className="text-zinc-700 font-semibold mt-2 ">
-                            <p className="mt-1.5">Jobs</p>
-                            <p className="mt-1.5">Internships</p>
-                            <p className="mt-1.5">Activity</p>
+                            <p onClick={()=>{
+                                navigate('/jobs')
+                            }} className="mt-1.5 cursor-pointer">Jobs</p>
+                            <p className="mt-1.5 cursor-pointer">Internships</p>
+                            <p className="mt-1.5 cursor-pointer">Activity</p>
                         </div>
                     </div>
                     <p className="mt-5"></p>

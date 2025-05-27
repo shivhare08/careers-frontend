@@ -11,6 +11,7 @@ import Notification from './pages/Notification'
 import Jobs from './pages/Jobs'
 import Profile from './pages/Profile'
 import Model from './components/Model'
+import Myapplication from './pages/Myapplication'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
           <Route path='/notification' element={<Notification/>}></Route>
           <Route path='/jobs' element={<Jobs/>}></Route>
           <Route path='/profile' element={<Profile/>}></Route>
+          <Route path='/myapplication' element={<Myapplication/>}></Route>
         </Routes>
       </BrowserRouter>
     </>
