@@ -33,26 +33,6 @@ export default function Signin() {
             <div className="w-screen h-screen bg-gray-200 flex justify-center ">
                 <div className="w-3/5 h-full bg-white ">
                     <p className=" p-2 text-center text-2xl mt-5">Careers<span className="text-violet-900">.com</span></p>
-                    {/* <div className="flex justify-evenly mt-4">
-                        <p onClick={() => {
-                            navigate('/')
-                        }} className="cursor-pointer font-semibold">home</p>
-                        <p onClick={() => {
-                            navigate('/about')
-                        }} className="cursor-pointer font-semibold ">about</p>
-                        <p onClick={() => {
-                            navigate('/jobs')
-                        }} className="cursor-pointer font-semibold">jobs</p>
-                        <p onClick={() => {
-                            navigate('/contact')
-                        }} className="cursor-pointer font-semibold">contact</p>
-                        <p onClick={() => {
-                            navigate('/notification')
-                        }} className="cursor-pointer font-semibold">notification</p>
-                        <p onClick={() => {
-                            navigate('/user/signin')
-                        }} className="font-semibold cursor-pointer text-violet-900">signin</p>
-                    </div> */}
 
 
                     <div className="flex justify-center text-white mt-10">
@@ -79,7 +59,9 @@ export default function Signin() {
                                         <p onClick={() => {
                                             navigate('/signup')
                                         }} className="cursor-pointer underline" >Signup here</p>
-                                        <p className=" underline">Admin</p>
+                                        <p onClick={()=>{
+                                            navigate('/admin/signin')
+                                        }} className="cursor-pointer underline">Admin</p>
                                     </div>
                                 </div>
                             </div>

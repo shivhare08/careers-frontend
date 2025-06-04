@@ -42,8 +42,8 @@ export default function Myapplication() {
 
     return (
         <>
-            <div className="w-screen bg-blue-100 h-screen flex justify-center">
-                <div className="w-screen sm:w-3/5 h-full bg-white">
+            <div className="w-full bg-blue-100 h-full flex justify-center">
+                <div className="w-full sm:w-3/5 h-full bg-white">
                     <p className="sizeFector p-2 text-center text-2xl mt-5">Careers<span className="text-violet-900">.com</span></p>
                     <div className="sizeFector flex justify-evenly mt-4">
                         <p onClick={() => {
@@ -106,8 +106,8 @@ export default function Myapplication() {
                             location={jobLocation}
                         />)}
                     </div>
-                    <div className="mt-6">
-                        <p className=" p-2 text-xs sm:text-base text-center ">2025 Careers<span className="text-violet-900">.com</span>. All rights reserved.</p>
+                    <div className="mt-6 ">
+                        <p className="sp-2 text-xs sm:text-base text-center ">2025 Careers<span className="text-violet-900">.com</span>. All rights reserved.</p>
                     </div>
                 </div>
                 <div className="sizeFector">

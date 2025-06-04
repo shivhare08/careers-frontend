@@ -12,6 +12,10 @@ import Jobs from './pages/Jobs'
 import Profile from './pages/Profile'
 import Model from './components/Model'
 import Myapplication from './pages/Myapplication'
+import Asignin from './admin/Asignin'
+import Dashboard from './admin/Dashboard'
+import Loader from './components/Loader'
+
 
 function App() {
 
@@ -28,6 +32,9 @@ function App() {
           <Route path='/jobs' element={<Jobs/>}></Route>
           <Route path='/profile' element={<Profile/>}></Route>
           <Route path='/myapplication' element={<Myapplication/>}></Route>
+          {/* ADMIN */}
+          <Route path='/admin/signin' element={<Asignin/>}></Route>
+          <Route path='/admin/dashboard' element={<Dashboard/>}></Route>
         </Routes>
       </BrowserRouter>
     </>

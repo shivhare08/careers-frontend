@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import Model from "../components/Model";
 import Phonesize from "../components/Phonesize";
 
+
+
 function Home() {
     const [details, setData] = useState([]);
     const [user, setUser] = useState({ userAllData: {}, imageUrl: "No Image" });
@@ -12,6 +14,8 @@ function Home() {
     const [mobilmodel, setMobilmodel] = useState(false);
     const desigh = "flex justify-evenly"
     const opacitytDesign = "opacity-45"
+    //const [applymodel , setApplymodel] = useState(true);
+
 
     useEffect(() => {
         async function data() {
@@ -42,8 +46,8 @@ function Home() {
 
     return (
         <>
-            <div className="w-screen h-full bg-gray-200 flex justify-center">
-                <div className="max-w-4/5 min-w-3/5 h-full bg-white">
+            <div className="sm:w-screen h-full bg-gray-200 flex justify-center">
+                <div className="sm:w-full sm:max-w-3/5 min-w-3/5 h-full bg-white ">
                     <p className="sizeFector p-2 text-center text-2xl mt-5">Careers<span className="text-violet-900">.com</span></p>
                     <div className="sizeFector flex justify-evenly mt-4">
                         <p onClick={() => {
@@ -104,11 +108,13 @@ function Home() {
                                 aggrement={aggrement}
                                 salary={salary}
                             />)}
+
                         </div>
                         <div className="sizeFector">
                             {model ? <Model /> : null}
                         </div>
                     </div>
+
 
 
                     <div className="mt-6">
@@ -123,19 +129,77 @@ function Home() {
 
 
 function DetailsComponent(props) {
+    const [done, setDone] = useState(false);
+    const navigate = useNavigate()
+    const [all, setAll] = useState([])
+    useEffect(() => {
+        async function bool() {
+            const myApplication = await axios.get("http://localhost:8520/user/myapplications", {
+                headers: {
+                    "token": localStorage.getItem('token')
+                }
+            })
+            setAll(myApplication.data.applications);
+        }
+        bool();
+
+        async function apply() {
+            setDone(x => !x)
+            const userapply = await axios.post("http://localhost:8520/user/jobapply", {
+                title: props.title,
+                didYouApplied: done
+            }, {
+                headers: {
+                    "token": localStorage.getItem('token')
+                }
+            })
+        }
+
+        apply()
+    }, [])
+
+
+
     return (
         <>
             <div className="flex justify-center">
                 <div className=" w-3/4 h-fit mt-4 p-2 shadow-xs border-b-0.5">
                     <h1 className="text-xs">job id - {props.courseId}</h1>
                     <h1 className="font-bold text-xl sm:text-2xl">{props.title} -{props.location}</h1>
-                    <h1 className="text-[12px] sm:text-xs">{props.description}</h1>
+                    <div className="md:w-96">
+                        <h1 className="text-[12px] sm:text-xs">{props.description}</h1>
+                    </div>
+                    {/* <h1 className="text-[12px] sm:text-xs">{props.description}</h1> */}
                     <h1 className="text-base sm:text-xl">batches - {props.courses}</h1>
                     <h1 className="text-base sm:text-xl">experience - {props.experience}</h1>
                     <h1 className="text-base sm:text-xl">job location - {props.location}</h1>
                     <h1 className="text-base sm:text-xl">aggrement - {props.aggrement}</h1>
                     <h1 className="text-base sm:text-xl">salary - {props.salary}</h1>
-                    <Button />
+
+                    <div className={`bg-blue-500 mt-1 w-16 h-8 text-white rounded cursor-pointer text-center pt-0.5`}>
+                        {props.done ? <div>view</div> : <div>apply</div>}
+                    </div>
+                    {/* {all.map(({didYouApplied , _id})=><Button status={done} key={_id} didYouApplied={didYouApplied}/>)} */}
+
+
+                    {/* <div className={`bg-blue-500 mt-1 w-16 h-8 text-white rounded cursor-pointer text-center pt-0.5`}>
+                        {done ? <div>view</div> : <div>apply</div>}
+                    </div> */}
+
+                    {/* <div onClick={apply} className={`${done ? "bg-green-600" : "bg-blue-500"} mt-1 w-16 h-8 text-white rounded cursor-pointer text-center pt-0.5`}>
+                        {done ? <div onClick={() => {
+                            navigate('/myapplication')}}>view</div> : "apply"}
+                    </div> */}
+
+                    {/* {done.map(({didYouApplied})=>{
+                        <div onClick={apply} className={`${didYouApplied ? "bg-green-600" : "bg-blue-500"} mt-1 w-16 h-8 text-white rounded cursor-pointer text-center pt-0.5`}>
+                        {didYouApplied ? <div onClick={() => {
+                            navigate('/myapplication')
+                        }}>view</div> : "apply"}
+                    </div>
+                    })} */}
+
+
                 </div>
             </div>
         </>
@@ -143,16 +207,20 @@ function DetailsComponent(props) {
 }
 
 
-function Button(props) {
+// function Button(props) {
 
-    return (
-        <>
-            <button className="bg-blue-500 border border-b-black mt-2 text-white pl-3 pt-1 pb-1 pr-3 rounded" onClick={props.fun} type="submit">Apply</button>
-        </>
-    )
+//     return (
+//         <>
+//             <div className={`bg-blue-500 mt-1 w-16 h-8 text-white rounded cursor-pointer text-center pt-0.5`}>
+//                 {props.done ? <div>view</div> : <div>apply</div>}
+//             </div>
+//         </>
+//     )
+// }
+
+function Input() {
+    <input className="border-2 bg-red-200" type="text" placeholder="title" />
 }
-
-
 
 
 export default Home

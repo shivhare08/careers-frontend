@@ -23,8 +23,8 @@ export default function Model() {
 
     return (
         <>
-            <div className="flex justify-end">
-                <div className="bg-violet-100 max-w-64 h-full  rounded-l-2xl">
+            <div className="flex justify-end ">
+                <div className="bg-violet-100 max-w-64 min-w-48 h-full  rounded-l-2xl ">
                     <p className=" p-2 text-center font-semibold text-2xl mt-5"> Careers<span className="text-violet-900">.com</span></p>
                     <div className="p-5 text-zinc-800">
                         <img className="w-20 h-20 rounded-full" src={`${user.imageUrl}`} />
@@ -49,7 +49,7 @@ export default function Model() {
                                 localStorage.removeItem("token")
                                 alert("logout successfully")
                                 navigate('/')
-                            }} className="cursor-pointer mt-1.5">Sign Out</p>
+                            }} className="cursor-pointer text-red-800 mt-1.5">Sign Out</p>
                         </div>
                     </div>
 
