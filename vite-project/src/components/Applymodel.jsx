@@ -4,7 +4,7 @@
     
 //     async function Applyfun(){
 //         //const job = 
-//         const data = await axios.post("http://localhost:8520/user/jobapply",{
+//         const data = await axios.post("https://careers-backend-m1xp.onrender.com/user/jobapply",{
 //             title
 //         },{
 //             headers : {

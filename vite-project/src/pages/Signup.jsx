@@ -44,7 +44,7 @@ export default function Signup() {
         formData.append('password', password);
         formData.append('image', file)
 
-        await axios.post("http://localhost:8520/user/signup",
+        await axios.post("https://careers-backend-m1xp.onrender.com/user/signup",
             formData
             // name,
             // phone,

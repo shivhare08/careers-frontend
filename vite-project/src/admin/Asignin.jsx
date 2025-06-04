@@ -13,7 +13,7 @@ export default function Asignin() {
         const department = departmentRef.current.value;
         const password = passwordRef.current.value;
 
-        const response = await axios.post("http://localhost:8520/admin/signin", {
+        const response = await axios.post("https://careers-backend-m1xp.onrender.com/admin/signin", {
             department,
             password
         })

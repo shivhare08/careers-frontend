@@ -14,7 +14,7 @@ export default function About() {
 
     useEffect(() => {
         async function data() {
-            const userdata = await axios.get("http://localhost:8520/user/myprofile", {
+            const userdata = await axios.get("https://careers-backend-m1xp.onrender.com/user/myprofile", {
                 headers: {
                     "token": localStorage.getItem('token')
                 }

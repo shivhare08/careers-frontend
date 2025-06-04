@@ -15,7 +15,7 @@ export default function Profile() {
 
     useEffect(() => {
         async function data() {
-            const userdata = await axios.get("http://localhost:8520/user/myprofile", {
+            const userdata = await axios.get("https://careers-backend-m1xp.onrender.com/user/myprofile", {
                 headers: {
                     "token": localStorage.getItem('token')
                 }
@@ -23,7 +23,7 @@ export default function Profile() {
             // setUser(userdata.data.data[0])
             setUser({ userAllData: userdata.data.data[0], imageUrl: userdata.data.data[0].image.url })
 
-            const myApplication = await axios.get("http://localhost:8520/user/myapplications", {
+            const myApplication = await axios.get("https://careers-backend-m1xp.onrender.com/user/myapplications", {
                 headers: {
                     "token": localStorage.getItem('token')
                 }

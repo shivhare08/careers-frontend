@@ -28,7 +28,7 @@ function Notidata() {
     const [notifications, setNotification] = useState([])
     useEffect(() => {
         async function byDef() {
-            const data = await axios.get("http://localhost:8520/user/allapplications", {
+            const data = await axios.get("https://careers-backend-m1xp.onrender.com/user/allapplications", {
                 headers: {
                     "token": localStorage.getItem('token')
                 }
@@ -58,7 +58,7 @@ function Box(props) {
 
     useEffect(() => {
         async function userData() {
-            const userdetails = await axios.get("http://localhost:8520/user/myprofile", {
+            const userdetails = await axios.get("https://careers-backend-m1xp.onrender.com/user/myprofile", {
                 headers: {
                     "token": localStorage.getItem('token')
                 }
@@ -94,7 +94,7 @@ function Navbar() {
 
     useEffect(() => {
         async function data() {
-            const userdata = await axios.get("http://localhost:8520/user/myprofile", {
+            const userdata = await axios.get("https://careers-backend-m1xp.onrender.com/user/myprofile", {
                 headers: {
                     "token": localStorage.getItem('token')
                 }

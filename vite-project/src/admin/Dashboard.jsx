@@ -13,7 +13,7 @@ export default function Dashboard() {
 
     useEffect(() => {
         async function data() {
-            const adminData = await axios.get("http://localhost:8520/admin/myprofile", {
+            const adminData = await axios.get("https://careers-backend-m1xp.onrender.com/admin/myprofile", {
                 headers: {
                     "token": localStorage.getItem('token')
                 }
@@ -122,7 +122,7 @@ function Jobs() {
     const [job, setJob] = useState([]);
     useEffect(() => {
         async function data() {
-            const alljobs = await axios.get("http://localhost:8520/careers/jobs", {
+            const alljobs = await axios.get("https://careers-backend-m1xp.onrender.com/careers/jobs", {
                 headers: {
                     "token": localStorage.getItem('token')
                 }
@@ -159,7 +159,7 @@ function Users() {
     const [user, setUser] = useState([]);
     useEffect(() => {
         async function data() {
-            const allusers = await axios.get("http://localhost:8520/admin/allusers", {
+            const allusers = await axios.get("https://careers-backend-m1xp.onrender.com/admin/allusers", {
                 headers: {
                     "token": localStorage.getItem("token")
                 }

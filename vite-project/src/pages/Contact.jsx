@@ -19,7 +19,7 @@ export default function Contact() {
 
     useEffect(() => {
         async function data() {
-            const userdata = await axios.get("http://localhost:8520/user/myprofile", {
+            const userdata = await axios.get("https://careers-backend-m1xp.onrender.com/user/myprofile", {
                 headers: {
                     "token": localStorage.getItem('token')
                 }
@@ -39,7 +39,7 @@ export default function Contact() {
             const email = emailRef.current.value;
             const message = messageRef.current.value;
 
-            const data = await axios.post('http://localhost:8520/contact/message', {
+            const data = await axios.post('https://careers-backend-m1xp.onrender.com/contact/message', {
                 name,
                 email,
                 message

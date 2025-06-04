@@ -15,7 +15,7 @@ export default function JobAddModal() {
     const experienceRef = useRef()
 
     async function courseAdded(){
-        const data = await axios.post("http://localhost:8520/admin/addjob",{
+        const data = await axios.post("https://careers-backend-m1xp.onrender.com/admin/addjob",{
             title : titleRef.current.value,
             type : selectRef.current.value,
             experience : experienceRef.current.value,
