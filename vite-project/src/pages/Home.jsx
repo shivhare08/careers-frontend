@@ -19,7 +19,7 @@ function Home() {
 
     useEffect(() => {
         async function data() {
-            const response = await axios.get("http://localhost:8520/user/allapplications", {
+            const response = await axios.get("https://careers-backend-m1xp.onrender.com/user/allapplications", {
                 headers: {
                     "token": localStorage.getItem('token')
                 }
@@ -28,7 +28,7 @@ function Home() {
 
 
 
-            const userdata = await axios.get("http://localhost:8520/user/myprofile", {
+            const userdata = await axios.get("https://careers-backend-m1xp.onrender.com/user/myprofile", {
                 headers: {
                     "token": localStorage.getItem('token')
                 }
@@ -134,7 +134,7 @@ function DetailsComponent(props) {
     const [all, setAll] = useState([])
     useEffect(() => {
         async function bool() {
-            const myApplication = await axios.get("http://localhost:8520/user/myapplications", {
+            const myApplication = await axios.get("https://careers-backend-m1xp.onrender.com/user/myapplications", {
                 headers: {
                     "token": localStorage.getItem('token')
                 }
@@ -145,7 +145,7 @@ function DetailsComponent(props) {
 
         async function apply() {
             setDone(x => !x)
-            const userapply = await axios.post("http://localhost:8520/user/jobapply", {
+            const userapply = await axios.post("https://careers-backend-m1xp.onrender.com/user/jobapply", {
                 title: props.title,
                 didYouApplied: done
             }, {

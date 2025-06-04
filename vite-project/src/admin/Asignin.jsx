@@ -54,7 +54,7 @@ export default function Asignin() {
                                     {/* <Input reference={departmentRef} x={"text"} y={"department"} mode={"none"} /> */}
                                     <Select reference={departmentRef}/>
                                     <br />
-                                    <Input reference={passwordRef} x={"password"} y={"password"} mode={"none"} />
+                                    <Input reference={passwordRef} x={"password"} y={"password"} />
                                     <br />
                                     
                                     <Button fun={calling} />

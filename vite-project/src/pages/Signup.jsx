@@ -76,17 +76,17 @@ export default function Signup() {
                             <p className="text-l mb-2 font-semibold text-center">Signup</p>
 
                             <form onSubmit={calling}>
-                                <Input reference={nameRef} x={"text"} y={"name"} mode={"none"} />
+                                <Input reference={nameRef} x={"text"} y={"name"}  />
                                 <br />
                                 <Input reference={phoneRef} x={"text"} y={"phone"} mode={"numeric"} />
                                 <br />
-                                <Input reference={passwordRef} x={"password"} y={"password"} mode={"none"} />
+                                <Input reference={passwordRef} x={"password"} y={"password"}  />
                                 <br />
 
-                                <Input reference={cityRef} x={"text"} y={"city"} mode={"none"} />
+                                <Input reference={cityRef} x={"text"} y={"city"}  />
                                 <br />
 
-                                <Input css={""} onChange={handelFilechange} x={"file"} mode={"none"} />
+                                <Input css={""} onChange={handelFilechange} x={"file"}  />
                                 {preview ? <img className="w-14 h-14 rounded-xl mt-1" src={preview} /> : null}
                                 <br />
                                 <Button />
@@ -96,7 +96,9 @@ export default function Signup() {
                                 <p onClick={() => {
                                     navigate('/')
                                 }} className="cursor-pointer text-blue-950 underline" >Signin here</p>
-                                <p className="cursor-pointer text-blue-950 underline">Admin</p>
+                                <p onClick={()=>{
+                                    navigate('/admin/signin')
+                                }} className="cursor-pointer text-blue-950 underline">Admin</p>
                             </div>
                         </div>
                     </div>

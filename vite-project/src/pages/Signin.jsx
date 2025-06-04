@@ -31,13 +31,13 @@ export default function Signin() {
     return (
         <>
             <div className="w-screen h-screen bg-gray-200 flex justify-center ">
-                <div className="w-3/5 h-full bg-white ">
+                <div className="w-full sm:w-3/5 h-full bg-white ">
                     <p className=" p-2 text-center text-2xl mt-5">Careers<span className="text-violet-900">.com</span></p>
 
 
                     <div className="flex justify-center text-white mt-10">
-                        <div className="w-2xl h-96 bg-violet-900  rounded">
-                            <h3 className="text-2xl text-center pt-14">Welcome , careers portal</h3>
+                        <div className="w-2xl h-96  bg-violet-900  rounded">
+                            <h3 className="text-xl sm:text-2xl text-center pt-14">Welcome , careers portal</h3>
                             <div className="flex justify-center">
                                 <div className="w-56">
                                     <marquee className="text-white" direction="left" loop="">
@@ -52,7 +52,7 @@ export default function Signin() {
                                     <p className="text-xl mb-2 font-semibold text-center">Login</p>
                                     <Input reference={phoneRef} x={"text"} y={"phone"} mode={"numeric"} />
                                     <br />
-                                    <Input reference={passwordRef} x={"password"} y={"password"} mode={"none"} />
+                                    <Input reference={passwordRef} x={"password"} y={"password"} />
                                     <br />
                                     <Button fun={calling} />
                                     <div className="flex justify-between">
@@ -109,7 +109,7 @@ export default function Signin() {
 function Input(props) {
     return (
         <>
-            <input className="border border-zinc-300 rounded w-72 pl-2 p-1 mt-1" ref={props.reference} inputMode={props.mode} type={props.x} placeholder={props.y} />
+            <input className="border border-zinc-300 rounded w-48 sm:w-72 pl-2 p-1 mt-1" ref={props.reference} inputMode={props.mode} type={props.x} placeholder={props.y} />
         </>
     )
 }
@@ -120,7 +120,7 @@ function Button(props) {
 
     return (
         <>
-            <button className="bg-amber-50 cursor-pointer border border-b-black w-72 text-black p-2 mt-2 rounded" onClick={props.fun} type="submit">signin</button>
+            <button className="bg-amber-50 cursor-pointer border border-b-black w-48 sm:w-72 text-black p-2 mt-2 rounded" onClick={props.fun} type="submit">signin</button>
         </>
     )
 }
